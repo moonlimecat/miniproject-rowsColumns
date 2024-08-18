@@ -1,18 +1,18 @@
 let rows;
 let columns;
-let circleHome;
+let items;
+let item;
 
 const apply = document.getElementById("applyBtn");
 const reset = document.getElementById("resetBtn");
 const inputs = document.querySelectorAll("input");
-apply.innerHTML = "Apply";
 
 function rowsAndColumns() {
   rows = document.getElementById("row").value;
   rows = Number(rows);
   columns = document.getElementById("column").value;
   columns = Number(columns);
-  circleHome = document.getElementById("circleHome");
+  items = document.getElementById("items");
 }
 
 function toReset() {
@@ -24,18 +24,25 @@ function toApply() {
   reset.style.display = "none";
 }
 
+function toClear() {
+  item = document.getElementById("item");
+  item.onclick = function () {
+    console.log("clicked");
+  };
+}
+
 apply.onclick = function () {
   rowsAndColumns();
-  if (rows == " " || columns == " ") {
+  if (!rows || !columns) {
     alert("please fill out the form");
   } else {
     for (let i = 1; i <= rows; i++) {
       for (let j = 1; j <= columns; j++) {
-        circleHome.innerHTML += `
-      <span id="circle"> </span>
+        items.innerHTML += `
+      <span id="item"></span>
       `;
       }
-      circleHome.innerHTML += "<br>";
+      items.innerHTML += "<br>";
     }
     toReset();
   }
@@ -44,5 +51,5 @@ apply.onclick = function () {
 reset.onclick = function () {
   toApply();
   inputs.forEach((input) => (input.value = ""));
-  circleHome.innerHTML = " ";
+  items.innerHTML = " ";
 };

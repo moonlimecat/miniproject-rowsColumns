@@ -47,14 +47,14 @@ button:active {
   transform: translateY(2px);
 }
 
-#circleHome {
+#items {
   margin: 30px;
   width: 700px;
   align-items: center;
   /* border: 1px solid black; */
 }
 
-#circle {
+#item {
   display: inline-block;
   background-color: rgb(13, 79, 79);
   border-radius: 0;
@@ -62,7 +62,7 @@ button:active {
   width: 50px;
 }
 
-#circle:hover {
+#item:hover {
   background-color: rgb(231, 241, 241);
   cursor: pointer;
 }
