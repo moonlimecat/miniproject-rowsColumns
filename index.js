@@ -24,13 +24,6 @@ function toApply() {
   reset.style.display = "none";
 }
 
-function toClear() {
-  item = document.getElementById("item");
-  item.onclick = function () {
-    console.log("clicked");
-  };
-}
-
 apply.onclick = function () {
   rowsAndColumns();
   if (!rows || !columns) {
